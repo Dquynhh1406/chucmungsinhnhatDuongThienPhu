@@ -13,7 +13,6 @@ const presentlist = [
 ];
 
 let hasRolled = false;
-let isMusicStarted = false;
 
 const giftBoxASCII = `
        🎁 🎁 🎁 🎁 🎁 🎁 🎁
@@ -30,11 +29,6 @@ input.addEventListener('input', () => {
 
 input.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
-        if (!isMusicStarted && bgMusic) {
-            try { bgMusic.play(); } catch(e) {}
-            isMusicStarted = true;
-        }
-
         const command = this.value.trim();
         this.value = '';
 
